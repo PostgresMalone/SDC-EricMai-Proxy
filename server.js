@@ -10,6 +10,7 @@ const app = express();
 const port = process.env.PORT || 3000;
 
 app.use(morgan("dev"));
+app.use(express.static(path.join(__dirname, "./public")));
 app.use('/room/:listing_id',express.static(path.join(__dirname, "./public")));
 app.use(BodyParser.json());
 app.use(BodyParser.urlencoded({ extended: true }));
